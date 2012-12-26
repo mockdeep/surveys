@@ -2,21 +2,21 @@ require 'spec_helper'
 
 describe SessionsController do
 
-  describe "GET 'new'" do
+  describe '#new' do
     it "returns http success" do
       get 'new'
       response.should be_success
     end
   end
 
-  describe "GET 'create'" do
+  describe '#create' do
     it "returns http success" do
       get 'create'
       response.should be_success
     end
   end
 
-  describe "GET 'destroy'" do
+  describe '#destroy' do
     it "returns http success" do
       get 'destroy'
       response.should be_success

@@ -1,0 +1,24 @@
+%h1 Create Account
+= form_for @user do |f|
+  = if @user.errors.any?
+    .errors_messages
+      %h2 That ain't the way we roll
+      %ul
+        = @user.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :email
+    = f.text_field :email
+
+  .field
+    = f.label :password
+    = f.password_field :password
+
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+
+  .actions
+  = f.submit
+
