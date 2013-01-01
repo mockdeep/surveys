@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => [:new]
+  before_filter :rediect_if_logged_in, :only => [:new, :create]
 
   def new
     @user = User.new

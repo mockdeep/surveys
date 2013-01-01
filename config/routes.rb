@@ -1,5 +1,5 @@
 Surveys::Application.routes.draw do
-  root :to => 'users#new'
+  root :to => 'sessions#new'
 
   resources :users, :only => [:create]
   resources :sessions, :only => [:create]
