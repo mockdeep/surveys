@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_filter :rediect_if_logged_in, :only => [:destroy]
 
   def new
   end
