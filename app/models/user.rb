@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
 
   validates :password, :presence => true, :on => :create
   validates :password_confirmation, :presence => true
+
+  def self.authenticate(email, password)
+    find_by_email(email).try(:authenticate, password)
+  end
 end
