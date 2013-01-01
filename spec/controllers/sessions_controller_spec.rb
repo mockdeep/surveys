@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe SessionsController do
 
+  before :each do
+    @request.env['HTTPS'] = 'on'
+  end
+
   describe '#new' do
     it "returns http success" do
       get 'new'
@@ -11,15 +15,15 @@ describe SessionsController do
 
   describe '#create' do
     it "returns http success" do
-      get 'create'
+      post 'create'
       response.should be_success
     end
   end
 
   describe '#destroy' do
     it "returns http success" do
-      get 'destroy'
-      response.should be_success
+      delete 'destroy'
+      response.should be_redirect
     end
   end
 

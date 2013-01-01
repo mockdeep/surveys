@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe UsersController do
 
+  before :each do
+    @request.env['HTTPS'] = 'on'
+  end
+
   describe '#new' do
     it "returns http success" do
       get 'new'
@@ -11,7 +15,7 @@ describe UsersController do
 
   describe '#create' do
     it "returns http success" do
-      get 'create'
+      post 'create'
       response.should be_success
     end
   end
