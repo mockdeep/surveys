@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :rediect_if_logged_in, :only => [:new, :create]
+
   def new
   end
 
