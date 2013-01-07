@@ -1,5 +1,5 @@
 Surveys::Application.routes.draw do
-  root :to => 'sessions#new'
+  root :to => 'surveys#index'
 
   resources :users, :only => [:create]
   resources :sessions, :only => [:create]
