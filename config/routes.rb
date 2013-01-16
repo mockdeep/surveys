@@ -3,7 +3,7 @@ Surveys::Application.routes.draw do
 
   resources :users, :only => [:create]
   resources :sessions, :only => [:create]
-  # resources :surveys
+  resources :surveys, :only => [:new]
 
   get '/signup',  :to => 'users#new', :as => 'signup'
   get '/signin', :to => 'sessions#new', :as => 'signin'

@@ -7,7 +7,7 @@ describe "User Signup" do
       page.should have_content('Viewing as a guest')
       page.should have_link('Sign In', :href => '/signin')
       page.should have_link('Sign Up', :href => '/signup')
-      page.should have_content('Yay! Index!')
+      page.should have_content('Surveys')
     end
   end
 
@@ -35,7 +35,7 @@ describe "User Signup" do
       fill_in "Password confirmation", :with => 123456
 
       click_button "Create User"
-      page.should have_content("Yay! Index!")
+      page.should have_content("Surveys")
     end
   end
 end

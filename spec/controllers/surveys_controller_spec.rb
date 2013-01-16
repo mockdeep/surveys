@@ -6,4 +6,11 @@ describe SurveysController do
       get :index
     end
   end
+
+  describe "#new" do
+    it 'instantiates a survey' do
+      get :new
+      assigns(:survey).should be_persisted
+    end
+  end
 end
