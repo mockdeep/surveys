@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221070729) do
+ActiveRecord::Schema.define(:version => 20130116055139) do
+
+  create_table "blanks", :force => true do |t|
+    t.string   "name"
+    t.integer  "survey_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "blanks", ["name"], :name => "index_blanks_on_name"
+  add_index "blanks", ["survey_id"], :name => "index_blanks_on_survey_id"
+
+  create_table "surveys", :force => true do |t|
+    t.string   "name"
+    t.string   "body"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "surveys", ["user_id"], :name => "index_surveys_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

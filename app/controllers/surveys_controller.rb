@@ -4,5 +4,6 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    p @survey
   end
 end

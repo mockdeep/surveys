@@ -45,6 +45,10 @@ Spork.prefork do
     # the seed, which is printed after each run.
     #     --seed 1234
     config.order = "random"
+
+    config.before :each, :type => :controller do
+      @request.env['HTTPS'] = 'on'
+    end
   end
 end
 
