@@ -9,15 +9,15 @@ describe 'survey creation' do
       end
       click_link "Create Survey"
 
-      title = Faker::Lorem.sentence
+      name = Faker::Lorem.sentence
       content1 = Faker::Lorem.sentence
       content2 = Faker::Lorem.sentence
-      fill_in "Title", :with => title
+      fill_in "Name", :with => name
       fill_in "Body", :with => "#{content1} _place_ #{content2} _date_"
       click_button "Submit"
-      page.should have_content(title)
+      page.should have_content(name)
 
-      click_link title
+      click_link name
       page.should have_content(content1)
       page.should have_content(content2)
       fill_in "place", :with => "San Francisco"
