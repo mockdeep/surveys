@@ -36,4 +36,13 @@ describe SurveysController do
       end
     end
   end
+
+  describe "#show" do
+    it 'finds a survey' do
+      survey = FactoryGirl.create(:survey)
+
+      get :show, { :id => survey.id }
+      assigns(:survey).should eq survey
+    end
+  end
 end
