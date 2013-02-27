@@ -1,0 +1,5 @@
+= form_tag(:survey_responses) do
+  = hidden_field_tag(:survey_id, @survey.id)
+  = @survey.parsed_body.html_safe
+  .actions
+    = submit_tag 'Submit'
