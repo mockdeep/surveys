@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
-gem 'pg'
-gem 'jquery-rails'
-gem 'thin'
-gem 'haml-rails'
+
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'foreigner'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'pg'
 gem 'strong_parameters'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails'
