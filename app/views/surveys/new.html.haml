@@ -1,3 +1,6 @@
+- @survey.errors.full_messages.each do |message|
+  %p= message
+
 = form_for(@survey) do |form|
   .field
     = form.label :name
